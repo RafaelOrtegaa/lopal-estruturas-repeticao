@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+
+<body>
+    <script>
+
+        let iniciar = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR.")
+        if (iniciar == 1) {
+
+            let numeroPensado = Math.floor(Math.random() * 10);
+            for (tentativa = 1; tentativa <= 3; tentativa++) {
+                let chute = prompt("Adivinhe um número de 1 a 10");
+                if (chute == numeroPensado) {
+                    alert("Parabéns, você acertou! ");
+                    break;
+                } else {
+                    alert("Você errou! Você tem mais " + (3 - tentativa) + " tentativas.");
+
+                    if (tentativa == 3) {
+                        document.write("Eu tinha pensado " + numeroPensado);
+                    }
+
+                }
+
+
+
+            }
+        } else if (iniciar == 2) {
+            alert("Que pena!! Fim de jogo")
+
+        }
+
+        let jogarNovamente = prompt("Deseja jogar novamente? Digite 1 para sim, se não digite 2");
+
+for (let reiniciar = 1; reiniciar == 1;) {
+    if (jogarNovamente == 1) {
+        numeroPensado = Math.floor(Math.random() * 10 + 1);
+        for (let tentativa = 1; tentativa <= 3; tentativa++) {
+            let chute = prompt("Adivinhe um número de 1 a 10");
+
+            if (chute == numeroPensado) {
+                alert("Parabéns, você acertou!");
+                break;
+            } else {
+                alert("Você errou! Você tem mais " + (3 - tentativa) + " tentativas.");
+            }
+        }
+
+        jogarNovamente = prompt("Deseja jogar novamente? Digite 1 para sim, se não digite 2");
+    } else {
+        alert("Que pena! Fim de jogo.");
+        reiniciar = 2;
+    }
+}
+        
+
+    </script>
+</body>
+
+</html>
